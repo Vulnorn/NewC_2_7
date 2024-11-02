@@ -6,28 +6,25 @@
         {
             string userInput;
             string userInputSimvol;
-            int lendtUserInput;
-            bool isReplay = true;
-            int errorRare = 1;
+            string stringWithName;
+            string stringWithCharacters=null;
 
             Console.Write($"Введите имя: ");
             userInput = Console.ReadLine();
-            lendtUserInput = userInput.Length + errorRare;
 
             Console.Write($"Введите символ: ");
             userInputSimvol = Console.ReadLine();
 
-            for (int i = 0; i <= lendtUserInput; i++)
-            {
-                Console.Write(userInputSimvol);
+            stringWithName = userInputSimvol + userInput + userInputSimvol;
 
-                if (i == lendtUserInput && isReplay)
-                {
-                    Console.Write($"\n{userInputSimvol}{userInput}{userInputSimvol}\n");
-                    i = 0 - errorRare;
-                    isReplay = false;
-                }
+            for (int i = 0; i < stringWithName.Length; i++)
+            {
+                stringWithCharacters += userInputSimvol;
             }
+
+            Console.Write($"{stringWithCharacters}\n" +
+                $"{stringWithName}\n" +
+                $"{stringWithCharacters}\n");
 
             Console.ReadKey();
         }
